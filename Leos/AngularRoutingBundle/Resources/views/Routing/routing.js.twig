@@ -1,0 +1,31 @@
+{{ name }}.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+
+    $locationProvider.html5Mode({enabled: true,requireBase: false});
+    $urlRouterProvider.otherwise("/");
+
+    $stateProvider
+    {% for k, route in routes %}
+
+        {% set urlParams = route.urlParams is defined ? route.urlParams : {} %}
+
+    .state('{{ k }}', {
+        url: '/{{ route.url }}'
+    {% if route.views is defined %}
+        ,views: {
+            '': { templateUrl: '{% autoescape 'html' %}{{ path(route.template) }}{% endautoescape %}' }
+    {% for kv, view in route.views %}
+        ,'{{ view.column }}@{{ k }}': {
+    {% if view.templateUrl is defined %}
+            templateUrl: {% autoescape 'html' %}'{{ path(view.templateUrl) }}'{% endautoescape %}
+    {% elseif view.template is defined %}
+            template: {% autoescape 'html' %}'{{ view.template }}'{% endautoescape %}
+    {#        template: $("#carlitos").html#}
+    {% endif %}
+    }
+    {% endfor %}
+        }
+        {% else %},templateUrl: '{% autoescape 'html' %}{{ path(route.template) }}{% endautoescape %}'{% endif %}})
+    {% endfor %}
+;
+
+}]);
