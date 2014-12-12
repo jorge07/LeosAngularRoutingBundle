@@ -23,11 +23,11 @@ Define your configuration site:
 ========================
 
 
-  #The config:
-  
+#The config:
+
   leos_angular_routing:
   
-    routes:#Layout Parameters
+    routes:                                     
     
         home:                                   #The State Name
             url: ''                             #The url name (Not prefix with "/")
