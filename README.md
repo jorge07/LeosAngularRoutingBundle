@@ -26,10 +26,10 @@ leos_angular_routing:
     routes:
         #Layout Parameters
         home:                                   #The State Name
-            url: ''                              #The url name (Not prefix with "/")
+            url: ''                             #The url name (Not prefix with "/")
             
             #The template to include
-            template: home                       #The symfony route name
+            template: home                      #The symfony route name
             
             #The childs
             views:
