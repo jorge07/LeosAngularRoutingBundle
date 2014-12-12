@@ -18,7 +18,8 @@ Add the link on your JS Block and replace "my-mode" for your module name, like t
   <script src="{{ path('leos_angular_routing_v1', {"module": "my-mode"}) }}"></script>
 
 
-On your config.yml or config_%env%.yml Define your configuration site:
+On your config.yml or config_%env%.yml 
+Define your configuration site:
 ========================
 
 leos_angular_routing:
@@ -48,16 +49,14 @@ Extra Content:
 ========================
 
   The Routing controller for test your application:
-  ========================
-  
+========================
   Add it only if you want debug the router
   - @LeosAngularRoutingBundle/Resources/public/js/Controller/RoutingController.js
 
   Use it with: ng-controller="routing"
   
   The Loading Bar:
-  ========================
-  
+========================
   Based on: https://github.com/chieffancypants/angular-loading-bar
   
   - @LeosAngularRoutingBundle/Resources/public/js/vendor/angular-loading-bar.js
