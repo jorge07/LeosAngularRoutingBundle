@@ -1,5 +1,5 @@
 {
-    "name": "LeosAngularRoutingBundle",
+    "name": "leos/angular-routing-bundle",
     "homepage": "https://github.com/jorge07/LeosAngularRoutingBundle",
     "description": "Adapting Angular UI-ROUTER to use it with Symfony2",
     "keywords": [
