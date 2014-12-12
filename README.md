@@ -48,7 +48,24 @@ Define your configuration site:
                 partial3:
                     column: content
                     templateUrl: todoDisplay
-                    
+
+        #To add Sub States
+        testContainer:
+            url: lobby
+            template: testContainer
+
+        testContainer.subrute:
+            url: my-list
+            template: todoDisplay
+
+        testContainer.account:
+            url: my-account
+            template: testContainer.account
+            
+        #To add states with parameters
+        play:
+            url: 'play/:gameId'
+            template: game
 Extra Content:
 ========================
 
