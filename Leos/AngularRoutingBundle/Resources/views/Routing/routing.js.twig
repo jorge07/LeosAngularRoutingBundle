@@ -1,46 +1,55 @@
-{{ name }}.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+/**
+ * The autoconfiguration file created by LeosAngularRoutingBundle
+ *
+ * @author: Jorge Arco <jorge.arcoma@gmail.com>
+ */
+(function(angular){
 
-    $locationProvider.html5Mode({enabled: true,requireBase: false});
-    $urlRouterProvider.otherwise("/");
+    angular.module('{{ name }}')
+        .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-    $stateProvider
-    {% for k, route in routes %}
+            $locationProvider.html5Mode({enabled: true,requireBase: false});
+            $urlRouterProvider.otherwise("/");
 
-        {% set urlParams = route.urlParams is defined ? route.urlParams : {} %}
+            $stateProvider
+            {% for k, route in routes %}
 
-        .state('{{ k }}', {
-            url: '/{{ route.url }}'
-        {% if route.views is defined %}
-            ,views: {
-                '': { templateUrl: '{% autoescape 'html' %}{{ path(route.template) }}{% endautoescape %}' }
+                {% set urlParams = route.urlParams is defined ? route.urlParams : {} %}
 
-        {% for kv, view in route.views %}
-                ,'{{ view.column }}@{{ k }}': {
+                .state('{{ k }}', {
+                    url: '/{{ route.url }}'
+                {% if route.views is defined %}
+                    ,views: {
+                        '': { templateUrl: '{% autoescape 'html' %}{{ path(route.template) }}{% endautoescape %}' }
 
-            {% if view.templateUrl is defined %}
+                {% for kv, view in route.views %}
+                        ,'{{ view.column }}@{{ k }}': {
 
-                    templateUrl: {% autoescape 'html' %}'{{ path(view.templateUrl) }}'{% endautoescape %}
+                    {% if view.templateUrl is defined %}
 
-            {% elseif view.template is defined %}
+                            templateUrl: {% autoescape 'html' %}'{{ path(view.templateUrl) }}'{% endautoescape %}
 
-                    template: {% autoescape 'html' %}'{{ view.template }}'{% endautoescape %}
+                    {% elseif view.template is defined %}
 
-            {% endif %}
-            }
+                            template: {% autoescape 'html' %}'{{ view.template }}'{% endautoescape %}
 
-        {% endfor %}
+                    {% endif %}
+                    }
 
-        }
+                {% endfor %}
 
-        {% else %}
+                }
 
-            ,templateUrl: '{% autoescape 'html' %}{{ path(route.template) }}{% endautoescape %}'
+                {% else %}
 
-        {% endif %}
+                    ,templateUrl: '{% autoescape 'html' %}{{ path(route.template) }}{% endautoescape %}'
 
-        })
+                {% endif %}
 
-    {% endfor %}
-;
+                })
 
-}]);
+            {% endfor %};
+
+        }]);
+
+})(angular);
