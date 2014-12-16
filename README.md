@@ -7,6 +7,12 @@ Based on: https://github.com/angular-ui/ui-router
 
 To configure:
 
+Add on AppKernel in the array bundles:
+========================
+
+new Leos\AngularRoutingBundle\LeosAngularRoutingBundle()
+
+
 On your template:
 ========================
 Add the link on your JS Block and replace "my-mode" for your module name, like this:
