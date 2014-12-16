@@ -26,6 +26,11 @@
         "symfony/symfony": "2.*"
     },
     "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x"
+        }
+    },
     "autoload": {
         "psr-0": { "Leos\\AngularRoutingBundle": "" }
     },
