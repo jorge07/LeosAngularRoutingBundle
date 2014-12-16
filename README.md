@@ -7,15 +7,22 @@ Based on: https://github.com/angular-ui/ui-router
 
 To configure:
 
+Add on AppKernel in the array bundles:
+========================
+
+new Leos\AngularRoutingBundle\LeosAngularRoutingBundle()
+
+
 On your template:
 ========================
-Add the link on your JS Block and replace "my-mode" for your module name, like this:
+Add the link on your JS Block and replace **"my-mode"** for your module name, like this:
 
   The angular ui router
   - @LeosAngularRoutingBundle/Resources/public/js/vendor/angular-ui-router.js
 
-  The custom configuration JS
-  <script src="{{ path('leos_angular_routing_v1', {"module": "my-mode"}) }}"></script>
+  The custom configuration JS:
+  
+  `<script src="{{ path('leos_angular_routing_v1', {"module": "my-mode"}) }}"></script>`
 
 
 On your config.yml or config_%env%.yml 
