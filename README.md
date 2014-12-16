@@ -21,7 +21,7 @@ Add the link on your JS Block and replace "my-mode" for your module name, like t
   - @LeosAngularRoutingBundle/Resources/public/js/vendor/angular-ui-router.js
 
   The custom configuration JS
-  #<script src="{{ path('leos_angular_routing_v1', {"module": "my-mode"}) }}"></script>
+  '<script src="{{ path('leos_angular_routing_v1', {"module": "my-mode"}) }}"></script>'
 
 
 On your config.yml or config_%env%.yml 
