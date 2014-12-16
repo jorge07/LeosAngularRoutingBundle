@@ -1,0 +1,102 @@
+/* Make clicks pass-through */
+#loading-bar,
+#loading-bar-spinner {
+    pointer-events: none;
+    -webkit-pointer-events: none;
+    -webkit-transition: all 250ms;
+    -moz-transition: all 250ms;
+    -o-transition: all 250ms;
+    transition: all 250ms;
+}
+
+#loading-bar.ng-enter > .bar,
+#loading-bar.ng-leave.ng-leave-active > .bar,
+#loading-bar-spinner.ng-enter > .bar,
+#loading-bar-spinner.ng-leave.ng-leave-active > .bar{
+    opacity: 0;
+}
+
+#loading-bar.ng-enter.ng-enter-active > .bar,
+#loading-bar.ng-leave > .bar,
+#loading-bar-spinner.ng-enter.ng-enter-active > .bar,
+#loading-bar-spinner.ng-leave > .bar {
+    opacity: 1;
+}
+
+#loading-bar .bar {
+    -webkit-transition: all 250ms;
+    -moz-transition: all 250ms;
+    -o-transition: all 250ms;
+    transition: all 250ms;
+    background: #CF0000;
+    position: fixed;
+    z-index: 10002;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom-right-radius: 1px;
+    border-top-right-radius: 1px;
+    opacity: 1;
+}
+
+/* Fancy blur effect */
+#loading-bar .peg {
+    position: absolute;
+    width: 15px;
+    right: 0;
+    height: 2px;
+    background: #000;
+    -moz-box-shadow: #CF0000 0px 0 6px 1px;
+    -ms-box-shadow: #CF0000 0px 0 6px 1px;
+    -webkit-box-shadow: #CF0000 0px 0 6px 1px;
+    box-shadow: #CF0000 0px 0 6px 1px;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+}
+
+#loading-bar-spinner {
+    display: block;
+    position: fixed;
+    z-index: 10002;
+    top: 10px;
+    left: 10px;
+}
+
+#loading-bar-spinner .spinner-icon {
+    width: 14px;
+    height: 14px;
+
+    border:  solid 2px transparent;
+    border-top-color:  #29d;
+    border-left-color: #29d;
+    border-radius: 10px;
+
+    -webkit-animation: loading-bar-spinner 400ms linear infinite;
+    -moz-animation:    loading-bar-spinner 400ms linear infinite;
+    -ms-animation:     loading-bar-spinner 400ms linear infinite;
+    -o-animation:      loading-bar-spinner 400ms linear infinite;
+    animation:         loading-bar-spinner 400ms linear infinite;
+}
+
+@-webkit-keyframes loading-bar-spinner {
+    0%   { -webkit-transform: rotate(0deg);   transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-moz-keyframes loading-bar-spinner {
+    0%   { -moz-transform: rotate(0deg);   transform: rotate(0deg); }
+    100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-o-keyframes loading-bar-spinner {
+    0%   { -o-transform: rotate(0deg);   transform: rotate(0deg); }
+    100% { -o-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-ms-keyframes loading-bar-spinner {
+    0%   { -ms-transform: rotate(0deg);   transform: rotate(0deg); }
+    100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@keyframes loading-bar-spinner {
+    0%   { transform: rotate(0deg);   transform: rotate(0deg); }
+    100% { transform: rotate(360deg); transform: rotate(360deg); }
+}
