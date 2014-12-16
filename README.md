@@ -25,9 +25,9 @@ Add the link on your JS Block and replace **"my-mode"** for your module name, li
   
   leos_angular_routing:
   
-    resource: "@LeosAngularRoutingBundle/Resources/config/routing.yml"
+      resource: "@LeosAngularRoutingBundle/Resources/config/routing.yml"
 
-    prefix:   /your-prefix
+      prefix:   /your-prefix
   
   The custom configuration JS:
   
