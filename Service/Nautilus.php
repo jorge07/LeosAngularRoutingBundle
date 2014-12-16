@@ -2,8 +2,6 @@
 
 namespace Leos\AngularRoutingBundle\Service;
 
-use Symfony\Bundle\FrameworkBundle\Routing\Router;
-
 /**
  * Nautilus is the class who manage all the routing parameters
  *
@@ -74,21 +72,6 @@ class Nautilus {
 
         $this->states[$name] = $state;
 
-    }
-
-    /**
-     * Add a new State
-     *
-     * @param $name
-     * @param array $state
-     *
-     * @return Nautilus
-     */
-    private function addState($name, $state = array()){
-
-        $this->states[$name] = $state;
-
-        return $this;
     }
 
     /**
