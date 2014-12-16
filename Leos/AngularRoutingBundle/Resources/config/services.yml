@@ -1,5 +1,0 @@
-services:
-    leos_angular_routing.nautilus:
-        class: Leos\AngularRoutingBundle\Service\Nautilus
-        calls: 
-            - [ setRouting, [@router]]

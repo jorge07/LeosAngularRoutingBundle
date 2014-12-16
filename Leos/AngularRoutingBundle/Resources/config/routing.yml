@@ -1,3 +1,0 @@
-leos_angular_routing_v1:
-    path:     /v1/{module}
-    defaults: { _controller: LeosAngularRoutingBundle:Routing:index }
