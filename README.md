@@ -20,6 +20,12 @@ Add the link on your JS Block and replace **"my-mode"** for your module name, li
   The angular ui router
   - @LeosAngularRoutingBundle/Resources/public/js/vendor/angular-ui-router.js
 
+
+  Add to the routing.yml:
+  leos_angular_routing:
+    resource: "@LeosAngularRoutingBundle/Resources/config/routing.yml"
+    prefix:   /your-prefix
+  
   The custom configuration JS:
   
   `<script src="{{ path('leos_angular_routing_v1', {"module": "my-mode"}) }}"></script>`
