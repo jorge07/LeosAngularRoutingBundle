@@ -77,6 +77,21 @@ Define your configuration site:
         testContainer.account:
             url: my-account
             template: testContainer.account
+        #OR
+        testContainer:
+            url: lobby
+            template: testContainer
+            childs:
+                subrute:
+                    url: my-list
+                    template: todoDisplay
+                    childs:
+                          cagada:
+                              url: cagada
+                              template: todoDisplay
+                account:
+                    url: my-account
+                    template: testContainer.account
             
         #To add states with parameters
         play:
