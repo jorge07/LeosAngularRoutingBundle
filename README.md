@@ -50,7 +50,9 @@ Define your configuration site:
             
             #The template to include
             template: home                      #The symfony route name
-            
+            #Add parameters to the route
+            urlParams:
+                offer: wellcome
             #The childs
             views:
                 partial1:                       #The partial name(unique)
