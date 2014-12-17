@@ -1,20 +1,21 @@
 /**
- * The autoconfiguration file created by LeosAngularRoutingBundle
- *
- * @author: Jorge Arco <jorge.arcoma@gmail.com>
- */
+* The autoconfiguration file created by LeosAngularRoutingBundle
+*
+* @author: Jorge Arco <jorge.arcoma@gmail.com>
+*/
 (function(angular){
 
-    angular.module('{{ name }}')
-        .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+angular.module('{{ name }}')
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-            $locationProvider.html5Mode({enabled: true,requireBase: false});
-            $urlRouterProvider.otherwise("/");
+$locationProvider.html5Mode({enabled: true,requireBase: false});
+$urlRouterProvider.otherwise("/");
 
-            $stateProvider
+$stateProvider
             {# ROUTES LOOP #}
             {% for k, route in routes %}
 
+                {% set urlParams = route.urlParams is defined ? route.urlParams : {} %}
 
                 .state('{{ k }}', {
                 url: '/{{ route.url }}'
@@ -24,19 +25,17 @@
 
                     ,views: {
 
-                    {% set urlParams = route.urlParams is defined ? route.urlParams : {} %}
-
-
-                    '': { templateUrl: '{% autoescape 'html' %}{{ path(route.template, urlParams) }}{% endautoescape %}' }
+                    '': { templateUrl: '{% autoescape 'html' %}{{ path(route.templateUrl, urlParams) }}{% endautoescape %}' }
 
 
                     {% for kv, view in route.views %}
+
+                        {% set urlParams = view.urlParams is defined ? view.urlParams : {} %}
 
                         ,'{{ view.column }}@{{ k }}': {
 
                         {% if view.templateUrl is defined %}
 
-                            {% set urlParams = view.urlParams is defined ? view.urlParams : {} %}
 
                             templateUrl: {% autoescape 'html' %}'{{ path(view.templateUrl, urlParams) }}'{% endautoescape %}
 
@@ -53,14 +52,14 @@
 
                 {% else %}
 
-                    ,templateUrl: '{% autoescape 'html' %}{{ path(route.template) }}{% endautoescape %}'
+                    ,templateUrl: '{% autoescape 'html' %}{{ path(route.templateUrl, urlParams) }}{% endautoescape %}'
 
                 {% endif %}
 
                 })
 
             {% endfor %}
-            ;
-        }]);
+;
+}]);
 
 })(angular);
