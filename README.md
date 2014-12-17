@@ -49,7 +49,7 @@ Define your configuration site:
             url: ''                             #The url name (Not prefix with "/")
             
             #The template to include
-            template: home                      #The symfony route name
+            templateUrl: home                      #The symfony route name
             #Add parameters to the route
             urlParams:
                 offer: wellcome
@@ -70,35 +70,35 @@ Define your configuration site:
         #To add Sub States
         testContainer:
             url: lobby
-            template: testContainer
+            templateUrl: testContainer
 
         testContainer.subrute:
             url: my-list
-            template: todoDisplay
+            templateUrl: todoDisplay
 
         testContainer.account:
             url: my-account
-            template: testContainer.account
+            templateUrl: testContainer.account
         #OR
         testContainer:
             url: lobby
-            template: testContainer
+            templateUrl: testContainer
             childs:
                 subrute:
                     url: my-list
-                    template: todoDisplay
+                    templateUrl: todoDisplay
                     childs:
                           cagada:
                               url: cagada
-                              template: todoDisplay
+                              templateUrl: todoDisplay
                 account:
                     url: my-account
-                    template: testContainer.account
+                    templateUrl: testContainer.account
             
         #To add states with parameters
         play:
             url: 'play/:gameId'
-            template: game
+            templateUrl: game
 Extra Content:
 ========================
 
