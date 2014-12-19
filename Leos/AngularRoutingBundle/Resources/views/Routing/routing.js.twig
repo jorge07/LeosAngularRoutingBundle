@@ -12,30 +12,34 @@ $locationProvider.html5Mode({enabled: true,requireBase: false});
 $urlRouterProvider.otherwise("/");
 
 $stateProvider
-            {# ROUTES LOOP #}
+{# ROUTES LOOP #}
             {% for k, route in routes %}
 
                 {% set urlParams = route.urlParams is defined ? route.urlParams : {} %}
 
                 .state('{{ k }}', {
-                url: '/{{ route.url }}'
+
+                {% if route.url is defined %}
+                    url: '/{{ route.url }}',
+                {% endif %}
 
                 {#View Loop#}
                 {% if route.views is defined %}
 
-                    ,views: {
+                    views: {
 
-                    '': { templateUrl: '{% autoescape 'html' %}{{ path(route.templateUrl, urlParams) }}{% endautoescape %}' }
+                    {% if route.templateUrl is defined %}
+                        '': { templateUrl: '{% autoescape 'html' %}{{ path(route.templateUrl, urlParams) }}{% endautoescape %}' },
+                    {% endif %}
 
 
                     {% for kv, view in route.views %}
 
                         {% set urlParams = view.urlParams is defined ? view.urlParams : {} %}
 
-                        ,'{{ view.column }}@{{ k }}': {
+                        '{{ view.column }}@{% if route.viewParent is defined %}{{ route.viewParent }}{% else %}{{ k }}{% endif %}': {
 
                         {% if view.templateUrl is defined %}
-
 
                             templateUrl: {% autoescape 'html' %}'{{ path(view.templateUrl, urlParams) }}'{% endautoescape %}
 
@@ -44,7 +48,7 @@ $stateProvider
                             template: {% autoescape 'html' %}'{{ view.template }}'{% endautoescape %}
 
                         {% endif %}
-                        }
+                        },
 
                     {% endfor %}
 
