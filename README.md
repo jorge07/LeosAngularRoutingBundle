@@ -57,6 +57,7 @@ Define your configuration site:
             views:
                 partial1:                       #The partial name(unique)
                     column: slider              #The column to insert the view
+                    viewParent: parnetSate      #Optional config to set nestead views
                     templateUrl: slider         #The symfony route name
                 #Other examamples
                 partial2:
