@@ -1,0 +1,31 @@
+{
+    "name": "leos/angular-routing-bundle",
+    "homepage": "https://github.com/jorge07/LeosAngularRoutingBundle",
+    "description": "Adapting Angular UI-ROUTER to use it with Symfony2",
+    "keywords": [
+        "symfony",
+        "symfony 2",
+        "angular",
+        "ui-router"
+    ],
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Jorge Arco",
+            "homepage": "https://github.com/jorge07"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.7",
+        "symfony/symfony": "2.*"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": { "PlatinumPixs\\Aws": "" }
+    },
+    "target-dir": "Leos/AngularRoutingBundle",
+    "require-dev": {
+        "phpunit/phpunit": "4.1.*"
+    }
+}

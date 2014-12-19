@@ -12,7 +12,7 @@ $locationProvider.html5Mode({enabled: true,requireBase: false});
 $urlRouterProvider.otherwise("/");
 
 $stateProvider
-{# ROUTES LOOP #}
+            {# ROUTES LOOP #}
             {% for k, route in routes %}
 
                 {% set urlParams = route.urlParams is defined ? route.urlParams : {} %}
@@ -63,7 +63,7 @@ $stateProvider
                 })
 
             {% endfor %}
-;
-}]);
+        ;
+    }]);
 
 })(angular);
