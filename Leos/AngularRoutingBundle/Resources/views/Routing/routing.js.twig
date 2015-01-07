@@ -37,7 +37,7 @@ $stateProvider
 
                         {% set urlParams = view.urlParams is defined ? view.urlParams : {} %}
 
-                        '{{ view.column }}@{% if route.viewParent is defined %}{{ route.viewParent }}{% else %}{{ k }}{% endif %}': {
+                        '{{ view.column }}': {
 
                         {% if view.templateUrl is defined %}
 
