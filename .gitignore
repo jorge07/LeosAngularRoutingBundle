@@ -1,7 +1,7 @@
 # -- Symfony2 -----------------------------------------
-app/bootstrap.php.cache
-app/bootstrap_cache.php.cache
-app/config/parameters.ini 
+Leos/AngularRoutingBundle/app/bootstrap.php.cache
+Leos/AngularRoutingBundle/app/bootstrap_cache.php.cache
+Leos/AngularRoutingBundle/app/config/parameters.ini 
 Leos/AngularRoutingBundle/app/config/parameters.yml 
 Leos/AngularRoutingBundle/app/cache/* 
 Leos/AngularRoutingBundle/app/logs/* 
