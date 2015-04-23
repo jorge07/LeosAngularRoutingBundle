@@ -1,0 +1,63 @@
+# -- Symfony2 -----------------------------------------
+Leos/AngularRoutingBundle/app/bootstrap.php.cache
+Leos/AngularRoutingBundle/app/bootstrap_cache.php.cache
+Leos/AngularRoutingBundle/app/config/parameters.ini 
+Leos/AngularRoutingBundle/app/config/parameters.yml 
+Leos/AngularRoutingBundle/app/cache/* 
+Leos/AngularRoutingBundle/app/logs/* 
+Leos/AngularRoutingBundle/vendor/* 
+Leos/AngularRoutingBundle/web/bundles/* 
+Leos/AngularRoutingBundle/web/css/* 
+Leos/AngularRoutingBundle/web/js/* 
+Leos/AngularRoutingBundle/web/uploads/*
+ 
+# -- Composer -----------------------------------------
+Leos/AngularRoutingBundle/composer.phar
+ 
+# -- PHPUnit ------------------------------------------
+Leos/AngularRoutingBundle/app/phpunit.xml
+ 
+# -- Editores ----------------------------------------- vim
+.*.sw[a-z] 
+*.un~ 
+Session.vim 
+.netrwhist
+ 
+# phpstorm
+.idea/
+ 
+# textmate
+*.tmproj 
+*.tmproject tmtags
+ 
+# sublimetext
+*.sublime-project
+*.sublime-workspace
+ 
+# netbeans
+nbproject/private/ 
+build/ 
+nbbuild/ 
+dist/ 
+nbdist/ 
+nbactions.xml 
+nb-configuration.xml
+ 
+# -- Sistemas Operativos ------------------------------ Windows
+Thumbs.db 
+ehthumbs.db 
+Desktop.ini 
+$RECYCLE.BIN/
+ 
+# Linux
+.* !.gitignore 
+!.htaccess *~
+ 
+# Mac OS X
+.DS_Store 
+.AppleDouble 
+.LSOverride 
+Icon 
+._* 
+.Spotlight-V100
+.Trashes
