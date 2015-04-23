@@ -19,45 +19,45 @@ Leos/AngularRoutingBundle/app/phpunit.xml
  
 # -- Editores ----------------------------------------- vim
 .*.sw[a-z] 
-Leos/AngularRoutingBundle/*.un~ 
-Leos/AngularRoutingBundle/Session.vim 
-Leos/AngularRoutingBundle/.netrwhist
+*.un~ 
+Session.vim 
+.netrwhist
  
 # phpstorm
-Leos/AngularRoutingBundle/.idea/
+.idea/
  
 # textmate
-Leos/AngularRoutingBundle/*.tmproj 
-Leos/AngularRoutingBundle/*.tmproject tmtags
+*.tmproj 
+*.tmproject tmtags
  
 # sublimetext
-Leos/AngularRoutingBundle//*.sublime-project
-Leos/AngularRoutingBundle/*.sublime-workspace
+*.sublime-project
+*.sublime-workspace
  
 # netbeans
-Leos/AngularRoutingBundle/nbproject/private/ 
-Leos/AngularRoutingBundle/build/ 
-Leos/AngularRoutingBundle/nbbuild/ 
-Leos/AngularRoutingBundle/dist/ 
-Leos/AngularRoutingBundle/nbdist/ 
-Leos/AngularRoutingBundle/nbactions.xml 
-Leos/AngularRoutingBundle/nb-configuration.xml
+nbproject/private/ 
+build/ 
+nbbuild/ 
+dist/ 
+nbdist/ 
+nbactions.xml 
+nb-configuration.xml
  
 # -- Sistemas Operativos ------------------------------ Windows
-Leos/AngularRoutingBundle/Thumbs.db 
-Leos/AngularRoutingBundle/ehthumbs.db 
-Leos/AngularRoutingBundle/Desktop.ini 
-Leos/AngularRoutingBundle/$RECYCLE.BIN/
+Thumbs.db 
+ehthumbs.db 
+Desktop.ini 
+$RECYCLE.BIN/
  
 # Linux
-Leos/AngularRoutingBundle/.* !.gitignore 
-Leos/AngularRoutingBundle/!.htaccess *~
+.* !.gitignore 
+!.htaccess *~
  
 # Mac OS X
-Leos/AngularRoutingBundle/.DS_Store 
-Leos/AngularRoutingBundle/.AppleDouble 
-Leos/AngularRoutingBundle/.LSOverride 
-Leos/AngularRoutingBundle/Icon 
-Leos/AngularRoutingBundle/._* 
-Leos/AngularRoutingBundle/.Spotlight-V100
-Leos/AngularRoutingBundle/.Trashes
+.DS_Store 
+.AppleDouble 
+.LSOverride 
+Icon 
+._* 
+.Spotlight-V100
+.Trashes
