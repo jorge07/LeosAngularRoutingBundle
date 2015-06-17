@@ -9,7 +9,7 @@ angular.module('{{ name }}')
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
 $locationProvider.html5Mode({enabled: true,requireBase: false});
-$urlRouterProvider.otherwise("/");
+$urlRouterProvider.otherwise("{{  }}/");
 
 $stateProvider
             {# ROUTES LOOP #}
@@ -32,6 +32,10 @@ $stateProvider
                         '': { templateUrl: '{% autoescape 'html' %}{{ path(route.templateUrl, urlParams) }}{% endautoescape %}' },
                     {% endif %}
 
+                    {% if route.templateUrlPath is defined %}
+                        '': { templateUrl: '{% autoescape 'html' %}{{ route.templateUrlPath }}{% endautoescape %}' },
+                    {% endif %}
+
 
                     {% for kv, view in route.views %}
 
@@ -43,11 +47,17 @@ $stateProvider
 
                             templateUrl: {% autoescape 'html' %}'{{ path(view.templateUrl, urlParams) }}'{% endautoescape %}
 
+
+                        {% elseif view.templateUrlPath is defined %}
+
+                            templateUrl: {% autoescape 'html' %}'{{ view.templateUrlPath }}'{% endautoescape %}
+
                         {% elseif view.template is defined %}
 
                             template: {% autoescape 'html' %}'{{ view.template }}'{% endautoescape %}
 
                         {% endif %}
+
                         },
 
                     {% endfor %}
